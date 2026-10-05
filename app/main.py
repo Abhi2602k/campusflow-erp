@@ -14,6 +14,7 @@ app.add_middleware(
 allow_origins=[
 
 "https://campusflow-fronten-git-930e41-abhishek-kumars-projects-ce5e3690.vercel.app",
+    'https://campusflow-frontend-9gyj-4cg4k2og2.vercel.app'
 ],
     allow_credentials=True,
     allow_methods=["*"],
