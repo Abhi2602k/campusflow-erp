@@ -13,7 +13,7 @@ app.add_middleware(
     CORSMiddleware,
 allow_origins=[
 
-    'https://campusflow-frontend-9gyj-5dpkwyp5e.vercel.app/login'
+"https://campusflow-fronten-git-930e41-abhishek-kumars-projects-ce5e3690.vercel.app",
 ],
     allow_credentials=True,
     allow_methods=["*"],
