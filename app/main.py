@@ -12,9 +12,8 @@ app = FastAPI(title="College Attendance ERP")
 app.add_middleware(
     CORSMiddleware,
 allow_origins=[
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://campusflow-frontend-9gyj.vercel.app",
+
+    "https://campusflow-frontend-lilac.vercel.app/",
 ],
     allow_credentials=True,
     allow_methods=["*"],
