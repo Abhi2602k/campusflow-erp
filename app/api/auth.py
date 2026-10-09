@@ -53,24 +53,20 @@ async def login(
     response.set_cookie(
         key="access_token",
         value=access_token,
-        httponly=True,
-        secure=False,
-        samesite="lax"
+        httponly=True, samesite="none", secure=True
     )
 
     response.set_cookie(
         key="refresh_token",
         value=refresh_token,
-        httponly=True,
-        secure=False,
-        samesite="lax",
+        httponly=True, samesite="none", secure=True,
         path="/"
     )
 
     response.set_cookie(
         key="csrf_token",
         value="dummy_csrf_for_now",
-        httponly=False
+        httponly=False, samesite="none", secure=True
     )
 
     return {
@@ -157,9 +153,7 @@ async def refresh_token(
     response.set_cookie(
         key="access_token",
         value=access_token,
-        httponly=True,
-        secure=False,
-        samesite="lax"
+        httponly=True, samesite="none", secure=True
     )
 
     return {
