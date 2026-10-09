@@ -7,16 +7,16 @@ from app.api.dashboard import router as dashboard_router
 from app.api.management import router as management_router
 from app.api.marks import router as marks_router
 
+from app.core.config import settings
+
 app = FastAPI(title="College Attendance ERP")
+
+
+origins = [origin.strip() for origin in settings.FRONTEND_CORS_ORIGINS.split(",") if origin.strip()]
 
 app.add_middleware(
     CORSMiddleware,
-allow_origins=[
-
-"https://campusflow-fronten-git-930e41-abhishek-kumars-projects-ce5e3690.vercel.app",
-    'https://campusflow-frontend-9gyj-4cg4k2og2.vercel.app',
-    "https://campusflow-frontend-5la160nf2-abhishek-kumars-projects-ce5e3690.vercel.app",
-],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
