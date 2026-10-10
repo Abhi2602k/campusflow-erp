@@ -788,6 +788,7 @@ async def create_student(
     )
 
     db.add(usr)
+        await db.flush()
 
     stu = Student(
         id=str(uuid.uuid4()),
@@ -810,7 +811,7 @@ async def create_student(
         await db.rollback()
         raise HTTPException(
             status_code=400,
-            detail="Student with email or enrollment already exists",
+            detail="Student already exists or Invalid Class/Year selected",
         )
 
     return {"message": "Success"}
@@ -1149,6 +1150,7 @@ async def confirm_import(
         )
 
         db.add(usr)
+        await db.flush()
 
         stu = Student(
             id=str(uuid.uuid4()),
