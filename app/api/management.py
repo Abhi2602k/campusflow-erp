@@ -788,7 +788,7 @@ async def create_student(
     )
 
     db.add(usr)
-        await db.flush()
+    await db.flush()
 
     stu = Student(
         id=str(uuid.uuid4()),
